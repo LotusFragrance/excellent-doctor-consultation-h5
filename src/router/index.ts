@@ -34,11 +34,16 @@ const router = createRouter({
           meta: { title: '个人中心' }
         }
       ]
+    },
+    {
+      path: '/user/patient',
+      component: () => import('@/views/User/PatientPage.vue'),
+      meta: { title: '家庭档案' }
     }
   ]
 })
 
-// 访问权限控制
+// 访问权限控制,路由守位
 router.beforeEach(async (to, from, next) => {
   document.title = `优医问诊-${to.meta.title || ''}`
   // 用户仓库

@@ -43,6 +43,26 @@ const router = createRouter({
       path: '/user/patient',
       component: () => import('@/views/User/PatientPage.vue'),
       meta: { title: '家庭档案' }
+    },
+    {
+      path: '/consult/fast',
+      component: () => import('@/views/Consult/ConsultFast.vue'),
+      meta: { title: '极速问诊' }
+    },
+    {
+      path: '/consult/dep',
+      component: () => import('@/views/Consult/ConsultDep.vue'),
+      meta: { title: '选择科室' }
+    },
+    {
+      path: '/consult/illness',
+      component: () => import('@/views/Consult/ConsultIllness.vue'),
+      meta: { title: '病情描述' }
+    },
+    {
+      path: '/consult/pay',
+      component: () => import('@/views/Consult/ConsultPay.vue'),
+      meta: { title: '问诊支付' }
     }
   ]
 })
@@ -76,7 +96,7 @@ router.beforeEach(async (to, from, next) => {
 // 路由后置守位
 router.afterEach((to) => {
   // 修改标题
-  document.title = `149优医问诊-${to.meta.title || ''}`
+  document.title = `优医问诊-${to.meta.title || ''}`
   NProgress.done()
 })
 

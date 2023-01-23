@@ -9,3 +9,4 @@ pinia.use(persist)
 export default pinia
 // 导入导出user
 export * from './user'
+export * from './modules/consult'
